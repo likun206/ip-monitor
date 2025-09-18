@@ -1,10 +1,8 @@
-name: Claude Code Workflow
+name: Claude Code Test
 
 on:
   issue_comment:
     types: [created]
-  pull_request:
-    types: [opened, synchronize]
 
 permissions:
   contents: write
@@ -13,16 +11,9 @@ permissions:
   id-token: write
 
 jobs:
-  claude-automation:
+  claude:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "Analyze and improve the code"
-          claude_args: |
-            --model claude-sonnet-4-20250514
-            --max-turns 10
-            --system-prompt "Follow project coding standards"
