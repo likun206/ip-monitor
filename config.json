@@ -1,0 +1,9 @@
+{
+  "check_interval": 300,
+  "ip_apis": [
+    "https://api.ipify.org?format=json",
+    "https://httpbin.org/ip",
+    "https://api.ip.sb/ip"
+  ],
+  "location_api": "http://ip-api.com/json/{ip}?fields=status,country,regionName,city,isp,query"
+}
