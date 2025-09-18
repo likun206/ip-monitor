@@ -39,8 +39,5 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # 可选配置
-          max_tokens: 4000
-          temperature: 0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
